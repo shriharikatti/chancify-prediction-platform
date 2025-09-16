@@ -71,6 +71,7 @@ model Vote {
   amount       Float
   potentialPayout Float
   actualPayout    Float?
+  status          VoteStatus @default(PENDING)
   createdAt    DateTime  @default(now())
 
   // Relations
@@ -96,6 +97,12 @@ model Transaction {
   user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("transactions")
+}
+enum VoteStatus {
+  PENDING
+  WON
+  LOST
+  REFUNDED
 }
 
 // Enums
@@ -135,6 +142,7 @@ enum TransactionType {
   WITHDRAWAL
   BET_PLACED
   BET_WON
+  BET_LOST
   BET_REFUNDED
 }
 

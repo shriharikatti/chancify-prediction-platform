@@ -117,9 +117,22 @@ export default function Dashboard() {
               <div>
                 <h1 className="text-2xl font-bold text-white">ChanciFy</h1>
                 <p className="text-sm text-gray-400">
-                  {user.role === 'ADMIN'
-                    ? '👨‍💼 Admin Dashboard'
-                    : '🎯 User Dashboard'}
+                  {user.role === 'ADMIN' && (
+                    <>
+                      <a
+                        href="/admin"
+                        className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+                      >
+                        Create Predictions
+                      </a>
+                      <a
+                        href="/admin/resolve"
+                        className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors"
+                      >
+                        Resolve Predictions
+                      </a>
+                    </>
+                  )}
                 </p>
               </div>
             </div>
