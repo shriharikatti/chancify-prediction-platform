@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import PredictionCard from '../../components/cards/PredictionCard';
 import toast, { Toaster } from 'react-hot-toast';
+import MyBets from './../../components/ui/MyBets';
+import AddMoney from '../../components/ui/AddMoney';
 
 interface User {
   id: string;
@@ -154,6 +156,19 @@ export default function Dashboard() {
                   ₹{user.walletBalance.toFixed(2)}
                 </p>
               </div>
+              <AddMoney
+                onSuccess={(newBalance: number) => {
+                  setUser((prev) =>
+                    prev ? { ...prev, walletBalance: newBalance } : null
+                  );
+                }}
+              />
+              <a
+                href="/admin"
+                className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+              >
+                Admin Panel
+              </a>
               <button
                 onClick={handleLogout}
                 className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
@@ -280,6 +295,11 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* My Bets Section */}
+        <div className="mb-8">
+          <MyBets />
         </div>
 
         {/* Category Filters */}
