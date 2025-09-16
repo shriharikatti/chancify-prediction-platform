@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -25,7 +25,29 @@ type FormData = z.infer<typeof schema>;
 
 export default function AdminPanel() {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
+
+  // Client-side auth guard
+  const [authLoading, setAuthLoading] = useState(true);
+  const [authorized, setAuthorized] = useState(false);
+
+  useEffect(() => {
+    const checkAdminAccess = async () => {
+      try {
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        if (!user.role || user.role === 'USER') {
+          router.push('/dashboard');
+          return;
+        }
+        setAuthorized(true);
+      } catch (error) {
+        router.push('/dashboard');
+      } finally {
+        setAuthLoading(false);
+      }
+    };
+
+    checkAdminAccess();
+  }, [router]);
 
   const {
     register,
@@ -35,6 +57,8 @@ export default function AdminPanel() {
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
+
+  const [loading, setLoading] = useState(false);
 
   async function onSubmit(data: FormData) {
     setLoading(true);
@@ -69,6 +93,16 @@ export default function AdminPanel() {
       setLoading(false);
     }
   }
+
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-[var(--background)] flex items-center justify-center">
+        <p className="text-white">Checking permissions...</p>
+      </div>
+    );
+  }
+
+  if (!authorized) return null;
 
   return (
     <div className="min-h-screen bg-[var(--background)]">

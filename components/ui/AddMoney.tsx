@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 
 declare global {
   interface Window {
-    Razorpay: any;  
+    Razorpay: any;
   }
 }
 
@@ -135,6 +135,7 @@ export default function AddMoney({ onSuccess }: AddMoneyProps) {
       <button
         onClick={() => setShowModal(true)}
         disabled={loading}
+        data-add-money-button
         className="bg-[var(--primary)] text-white px-4 py-2 rounded-lg hover:bg-[var(--primary)]/90 transition-colors font-medium disabled:opacity-50"
       >
         {loading ? 'Processing...' : 'Add Money'}

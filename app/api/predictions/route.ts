@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '../../../lib/db';
 import { getAuthenticatedUser } from '../../../lib/middleware';
+import { requireAdmin } from '../../../lib/rbac';
 
 export async function GET(request: NextRequest) {
   try {
@@ -59,10 +60,8 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const user = await getAuthenticatedUser(request);
-    if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    // Require admin role
+    await requireAdmin(request);
 
     const body = await request.json();
     const { question, description, category, endTime, imageUrl } = body;
@@ -81,7 +80,14 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json({ prediction });
-  } catch (error) {
+  } catch (error: any) {
+    if (error.message === 'Admin access required') {
+      return NextResponse.json(
+        { error: 'Unauthorized: Admin access required' },
+        { status: 403 }
+      );
+    }
+
     console.error('Create prediction error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },

@@ -12,6 +12,22 @@ export async function POST(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    // CRITICAL: Block admin from betting
+    const fullUser = await db.user.findUnique({
+      where: { id: user.id },
+      select: { role: true, walletBalance: true },
+    });
+
+    if (fullUser?.role === 'ADMIN') {
+      return NextResponse.json(
+        {
+          error:
+            'Admins cannot place bets on predictions. This prevents conflicts of interest.',
+        },
+        { status: 403 }
+      );
+    }
+
     const { choice, amount } = await request.json();
     const predictionId = params.id;
 

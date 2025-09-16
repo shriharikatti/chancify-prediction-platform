@@ -12,6 +12,7 @@ type SignupFormData = {
   password: string;
   confirmPassword: string;
   name?: string;
+  role?: 'USER' | 'ADMIN';
 };
 
 export default function SignupForm() {
@@ -92,6 +93,21 @@ export default function SignupForm() {
             {errors.name && (
               <p className="mt-1 text-sm text-red-400">{errors.name.message}</p>
             )}
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-300 mb-2">
+              Account Type
+            </label>
+            <select
+              {...register('role')}
+              className="w-full px-4 py-3 bg-[var(--surface)] border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+            >
+              <option value="USER">🎯 User (Make Predictions & Bet)</option>
+              <option value="ADMIN">
+                👨‍💼 Admin (Create & Manage Predictions)
+              </option>
+            </select>
           </div>
 
           <div>

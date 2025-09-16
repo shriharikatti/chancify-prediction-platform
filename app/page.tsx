@@ -19,7 +19,7 @@ export default function Home() {
             </div>
             <span className="text-xl font-bold text-white">ChanciFy</span>
           </div>
-          <div className="flex space-x-4">
+          <div className="flex space-x-5 items-center">
             <Link
               href="/auth/login"
               className="text-gray-300 hover:text-white transition-colors"

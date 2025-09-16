@@ -1,0 +1,395 @@
+
+> chancify@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.3
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.106:3000
+   - Environments: .env.local, .env
+
+ ✓ Starting...
+ ✓ Ready in 3.8s
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 6.5s (596 modules)
+ GET /dashboard 200 in 7103ms
+ ✓ Compiled in 1208ms (242 modules)
+ ✓ Compiled in 447ms (242 modules)
+ ✓ Compiled in 461ms (242 modules)
+ ✓ Compiled in 314ms (242 modules)
+ ✓ Compiled in 726ms (242 modules)
+ ✓ Compiled in 517ms (242 modules)
+ ✓ Compiled in 1716ms (242 modules)
+ ✓ Compiled in 1038ms (242 modules)
+ ✓ Compiled in 613ms (242 modules)
+ ⨯ ./components/cards/PredictionCard.tsx
+Module parse failed: Identifier 'handleVoteClick' has already been declared (25:10)
+|         setShowVoteModal(true);
+|     };
+>     const handleVoteClick = (choice)=>{
+|         // Check if admin
+|         if (isAdmin) {
+
+Import trace for requested module:
+./components/cards/PredictionCard.tsx
+./app/dashboard/page.tsx
+ ⨯ ./components/cards/PredictionCard.tsx
+Module parse failed: Identifier 'handleVoteClick' has already been declared (25:10)
+|         setShowVoteModal(true);
+|     };
+>     const handleVoteClick = (choice)=>{
+|         // Check if admin
+|         if (isAdmin) {
+
+Import trace for requested module:
+./components/cards/PredictionCard.tsx
+./app/dashboard/page.tsx
+ ⨯ ./components/cards/PredictionCard.tsx
+Module parse failed: Identifier 'handleVoteClick' has already been declared (25:10)
+|         setShowVoteModal(true);
+|     };
+>     const handleVoteClick = (choice)=>{
+|         // Check if admin
+|         if (isAdmin) {
+
+Import trace for requested module:
+./components/cards/PredictionCard.tsx
+./app/dashboard/page.tsx
+ ✓ Compiled in 295ms (242 modules)
+ ✓ Compiled in 385ms (242 modules)
+ ✓ Compiled in 456ms (242 modules)
+ ✓ Compiled in 531ms (242 modules)
+ ✓ Compiled in 1062ms (242 modules)
+ ✓ Compiled in 732ms (242 modules)
+ ✓ Compiled in 667ms (242 modules)
+ ✓ Compiled in 314ms (242 modules)
+ ✓ Compiled in 317ms (242 modules)
+ ✓ Compiled in 369ms (242 modules)
+ ✓ Compiled in 396ms (242 modules)
+ ✓ Compiled in 585ms (242 modules)
+ ✓ Compiled in 507ms (242 modules)
+ ⨯ ./app/dashboard/page.tsx
+Error:   [31mx[0m Unexpected token. Did you mean `{'>'}` or `&gt;`?
+     ,-[[36;1;4mC:\Users\sriha\OneDrive\CohortProjects\MasterJi\Full-Stack-Projects\chancify\app\dashboard\page.tsx[0m:197:1]
+ [2m194[0m |         {user.role === 'USER' && (
+ [2m195[0m |           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+ [2m196[0m |             {/* User stats cards */}
+ [2m197[0m |            v>
+     : [35;1m            ^[0m
+ [2m198[0m |             </div>
+ [2m199[0m | 
+ [2m199[0m |             <div className="bg-[var(--surface)] p-6 rounded-xl border border-gray-700 hover:border-[var(--primary)]/50 transition-all">
+     `----
+  [31mx[0m Expected '</', got 'className'
+     ,-[[36;1;4mC:\Users\sriha\OneDrive\CohortProjects\MasterJi\Full-Stack-Projects\chancify\app\dashboard\page.tsx[0m:200:1]
+ [2m197[0m |            v>
+ [2m198[0m |             </div>
+ [2m199[0m | 
+ [2m200[0m |             <div className="bg-[var(--surface)] p-6 rounded-xl border border-gray-700 hover:border-[var(--primary)]/50 transition-all">
+     : [35;1m                 ^^^^^^^^^[0m
+ [2m201[0m |               <div className="flex items-center justify-between">
+ [2m202[0m |                 <div>
+ [2m202[0m |                   <p className="text-sm text-gray-300">Total Predictions</p>
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.tsx
+ ⨯ ./app/dashboard/page.tsx
+Error:   [31mx[0m Unexpected token. Did you mean `{'>'}` or `&gt;`?
+     ,-[[36;1;4mC:\Users\sriha\OneDrive\CohortProjects\MasterJi\Full-Stack-Projects\chancify\app\dashboard\page.tsx[0m:197:1]
+ [2m194[0m |         {user.role === 'USER' && (
+ [2m195[0m |           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+ [2m196[0m |             {/* User stats cards */}
+ [2m197[0m |            v>
+     : [35;1m            ^[0m
+ [2m198[0m |             </div>
+ [2m199[0m | 
+ [2m199[0m |             <div className="bg-[var(--surface)] p-6 rounded-xl border border-gray-700 hover:border-[var(--primary)]/50 transition-all">
+     `----
+  [31mx[0m Expected '</', got 'className'
+     ,-[[36;1;4mC:\Users\sriha\OneDrive\CohortProjects\MasterJi\Full-Stack-Projects\chancify\app\dashboard\page.tsx[0m:200:1]
+ [2m197[0m |            v>
+ [2m198[0m |             </div>
+ [2m199[0m | 
+ [2m200[0m |             <div className="bg-[var(--surface)] p-6 rounded-xl border border-gray-700 hover:border-[var(--primary)]/50 transition-all">
+     : [35;1m                 ^^^^^^^^^[0m
+ [2m201[0m |               <div className="flex items-center justify-between">
+ [2m202[0m |                 <div>
+ [2m202[0m |                   <p className="text-sm text-gray-300">Total Predictions</p>
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.tsx
+ ⨯ ./app/dashboard/page.tsx
+Error:   [31mx[0m Unexpected token. Did you mean `{'>'}` or `&gt;`?
+     ,-[[36;1;4mC:\Users\sriha\OneDrive\CohortProjects\MasterJi\Full-Stack-Projects\chancify\app\dashboard\page.tsx[0m:197:1]
+ [2m194[0m |         {user.role === 'USER' && (
+ [2m195[0m |           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+ [2m196[0m |             {/* User stats cards */}
+ [2m197[0m |            v>
+     : [35;1m            ^[0m
+ [2m198[0m |             </div>
+ [2m199[0m | 
+ [2m199[0m |             <div className="bg-[var(--surface)] p-6 rounded-xl border border-gray-700 hover:border-[var(--primary)]/50 transition-all">
+     `----
+  [31mx[0m Expected '</', got 'className'
+     ,-[[36;1;4mC:\Users\sriha\OneDrive\CohortProjects\MasterJi\Full-Stack-Projects\chancify\app\dashboard\page.tsx[0m:200:1]
+ [2m197[0m |            v>
+ [2m198[0m |             </div>
+ [2m199[0m | 
+ [2m200[0m |             <div className="bg-[var(--surface)] p-6 rounded-xl border border-gray-700 hover:border-[var(--primary)]/50 transition-all">
+     : [35;1m                 ^^^^^^^^^[0m
+ [2m201[0m |               <div className="flex items-center justify-between">
+ [2m202[0m |                 <div>
+ [2m202[0m |                   <p className="text-sm text-gray-300">Total Predictions</p>
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.tsx
+ ⨯ ./app/dashboard/page.tsx
+Error:   [31mx[0m Expected '</', got 'className'
+     ,-[[36;1;4mC:\Users\sriha\OneDrive\CohortProjects\MasterJi\Full-Stack-Projects\chancify\app\dashboard\page.tsx[0m:200:1]
+ [2m197[0m |            
+ [2m198[0m |             </div>
+ [2m199[0m | 
+ [2m200[0m |             <div className="bg-[var(--surface)] p-6 rounded-xl border border-gray-700 hover:border-[var(--primary)]/50 transition-all">
+     : [35;1m                 ^^^^^^^^^[0m
+ [2m201[0m |               <div className="flex items-center justify-between">
+ [2m202[0m |                 <div>
+ [2m202[0m |                   <p className="text-sm text-gray-300">Total Predictions</p>
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.tsx
+ ✓ Compiled in 699ms (242 modules)
+ ⨯ ./app/dashboard/page.tsx
+Error:   [31mx[0m Unexpected token. Did you mean `{'>'}` or `&gt;`?
+     ,-[[36;1;4mC:\Users\sriha\OneDrive\CohortProjects\MasterJi\Full-Stack-Projects\chancify\app\dashboard\page.tsx[0m:201:1]
+ [2m198[0m |                 strokeLinejoin="round"
+ [2m199[0m |                       strokeWidth={2}
+ [2m200[0m |                       d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2"
+ [2m201[0m |                     />
+     : [35;1m                     ^[0m
+ [2m202[0m |                   </svg>
+ [2m203[0m |                 </div>
+ [2m203[0m |               </div>
+     `----
+  [31mx[0m Expected '</', got 'jsx text (
+  [31m|[0m                 )'
+     ,-[[36;1;4mC:\Users\sriha\OneDrive\CohortProjects\MasterJi\Full-Stack-Projects\chancify\app\dashboard\page.tsx[0m:202:1]
+ [2m199[0m |                           strokeWidth={2}
+ [2m200[0m |                           d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2"
+ [2m201[0m |                         />
+ [2m202[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m                   </svg>
+ [2m203[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m                 </div>
+ [2m204[0m |                   </div>
+ [2m205[0m |                 </div>
+ [2m205[0m |     
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.tsx
+ ⨯ ./app/dashboard/page.tsx
+Error:   [31mx[0m Expected '</', got 'jsx text (
+  [31m|[0m                 )'
+     ,-[[36;1;4mC:\Users\sriha\OneDrive\CohortProjects\MasterJi\Full-Stack-Projects\chancify\app\dashboard\page.tsx[0m:199:1]
+ [2m196[0m |                 {/* User stats cards */}
+ [2m197[0m |                 <div className="bg-[var(--surface)] p-6 rounded-xl border border-gray-700 hover:border-[var(--primary)]/50 transition-all">
+ [2m198[0m |                    
+ [2m199[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m                   </svg>
+ [2m200[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m                 </div>
+ [2m201[0m |                   </div>
+ [2m202[0m |                 </div>
+ [2m202[0m |     
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.tsx
+ ⨯ ./app/dashboard/page.tsx
+Error:   [31mx[0m Unterminated regexp literal
+     ,-[[36;1;4mC:\Users\sriha\OneDrive\CohortProjects\MasterJi\Full-Stack-Projects\chancify\app\dashboard\page.tsx[0m:202:1]
+ [2m199[0m |         
+ [2m200[0m |                 </div>
+ [2m201[0m |               </div>
+ [2m202[0m |             </div>
+     : [35;1m             ^^^^^[0m
+ [2m203[0m | 
+ [2m204[0m |             <div className="bg-[var(--surface)] p-6 rounded-xl border border-gray-700 hover:border-[var(--primary)]/50 transition-all">
+ [2m204[0m |               <div className="flex items-center justify-between">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.tsx
+ ✓ Compiled in 402ms (242 modules)
+ ✓ Compiled in 560ms (242 modules)
+ ✓ Compiled in 638ms (242 modules)
+ ✓ Compiled in 456ms (242 modules)
+ ✓ Compiled in 1781ms (242 modules)
+ ⨯ ./app/dashboard/page.tsx:5:1
+Module not found: Can't resolve '@/components/cards/PredictionCard'
+  3 | import { useEffect, useState } from 'react';
+  4 | import { useRouter } from 'next/navigation';
+> 5 | import PredictionCard from '@/components/cards/PredictionCard';
+    | ^
+  6 | import AddMoney from '@/components/ui/AddMoney';
+  7 | import toast, { Toaster } from 'react-hot-toast';
+  8 |
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./app/dashboard/page.tsx:5:1
+Module not found: Can't resolve '@/components/cards/PredictionCard'
+  3 | import { useEffect, useState } from 'react';
+  4 | import { useRouter } from 'next/navigation';
+> 5 | import PredictionCard from '@/components/cards/PredictionCard';
+    | ^
+  6 | import AddMoney from '@/components/ui/AddMoney';
+  7 | import toast, { Toaster } from 'react-hot-toast';
+  8 |
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./app/dashboard/page.tsx:5:1
+Module not found: Can't resolve '@/components/cards/PredictionCard'
+  3 | import { useEffect, useState } from 'react';
+  4 | import { useRouter } from 'next/navigation';
+> 5 | import PredictionCard from '@/components/cards/PredictionCard';
+    | ^
+  6 | import AddMoney from '@/components/ui/AddMoney';
+  7 | import toast, { Toaster } from 'react-hot-toast';
+  8 |
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./app/dashboard/page.tsx
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4mC:\Users\sriha\OneDrive\CohortProjects\MasterJi\Full-Stack-Projects\chancify\app\dashboard\page.tsx[0m:5:1]
+ [2m2[0m | 
+ [2m3[0m | import { useEffect, useState } from 'react';
+ [2m4[0m | import { useRouter } from 'next/navigation';
+ [2m5[0m | import PredictionCard from ';
+   : [35;1m                           ^^[0m
+ [2m6[0m | import AddMoney from '@/components/ui/AddMoney';
+ [2m7[0m | import toast, { Toaster } from 'react-hot-toast';
+ [2m7[0m | 
+   `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.tsx
+ ⨯ ./app/dashboard/page.tsx
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4mC:\Users\sriha\OneDrive\CohortProjects\MasterJi\Full-Stack-Projects\chancify\app\dashboard\page.tsx[0m:5:1]
+ [2m2[0m | 
+ [2m3[0m | import { useEffect, useState } from 'react';
+ [2m4[0m | import { useRouter } from 'next/navigation';
+ [2m5[0m | import PredictionCard from ';
+   : [35;1m                           ^^[0m
+ [2m6[0m | import AddMoney from '@/components/ui/AddMoney';
+ [2m7[0m | import toast, { Toaster } from 'react-hot-toast';
+ [2m7[0m | 
+   `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.tsx
+ ⨯ ./app/dashboard/page.tsx:5:1
+Module not found: Empty dependency (no request)
+  3 | import { useEffect, useState } from 'react';
+  4 | import { useRouter } from 'next/navigation';
+> 5 | import PredictionCard from '';
+    | ^
+  6 | import AddMoney from '@/components/ui/AddMoney';
+  7 | import toast, { Toaster } from 'react-hot-toast';
+  8 |
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./app/dashboard/page.tsx:5:1
+Module not found: Can't resolve '../../'
+  3 | import { useEffect, useState } from 'react';
+  4 | import { useRouter } from 'next/navigation';
+> 5 | import PredictionCard from '../../';
+    | ^
+  6 | import AddMoney from '@/components/ui/AddMoney';
+  7 | import toast, { Toaster } from 'react-hot-toast';
+  8 |
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./app/dashboard/page.tsx:5:1
+Module not found: Can't resolve '../../components.'
+  3 | import { useEffect, useState } from 'react';
+  4 | import { useRouter } from 'next/navigation';
+> 5 | import PredictionCard from '../../components.';
+    | ^
+  6 | import AddMoney from '@/components/ui/AddMoney';
+  7 | import toast, { Toaster } from 'react-hot-toast';
+  8 |
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./app/dashboard/page.tsx:5:1
+Module not found: Can't resolve '../../components/'
+  3 | import { useEffect, useState } from 'react';
+  4 | import { useRouter } from 'next/navigation';
+> 5 | import PredictionCard from '../../components/';
+    | ^
+  6 | import AddMoney from '@/components/ui/AddMoney';
+  7 | import toast, { Toaster } from 'react-hot-toast';
+  8 |
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./app/dashboard/page.tsx:5:1
+Module not found: Can't resolve '../../components/cards'
+  3 | import { useEffect, useState } from 'react';
+  4 | import { useRouter } from 'next/navigation';
+> 5 | import PredictionCard from '../../components/cards';
+    | ^
+  6 | import AddMoney from '@/components/ui/AddMoney';
+  7 | import toast, { Toaster } from 'react-hot-toast';
+  8 |
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ui/AddMoney'
+  4 | import { useRouter } from 'next/navigation';
+  5 | import PredictionCard from '../../components/cards/PredictionCard';
+> 6 | import AddMoney from '@/components/ui/AddMoney';
+    | ^
+  7 | import toast, { Toaster } from 'react-hot-toast';
+  8 |
+  9 | interface User {
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '../components/ui/AddMoney'
+  4 | import { useRouter } from 'next/navigation';
+  5 | import PredictionCard from '../../components/cards/PredictionCard';
+> 6 | import AddMoney from '../components/ui/AddMoney';
+    | ^
+  7 | import toast, { Toaster } from 'react-hot-toast';
+  8 |
+  9 | interface User {
+
+https://nextjs.org/docs/messages/module-not-found
+ ✓ Compiled in 491ms (242 modules)
+ ✓ Compiled in 333ms (242 modules)

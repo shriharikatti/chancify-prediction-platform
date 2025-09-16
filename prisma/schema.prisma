@@ -14,11 +14,12 @@ model User {
   email           String    @unique
   password        String
   name            String?
+  role            UserRole  @default(USER) 
   isEmailVerified Boolean   @default(false)
   emailVerifyToken String?
   resetToken      String?
   resetTokenExpiry DateTime?
-  walletBalance   Float     @default(1000) // Starting balance
+  walletBalance   Float     @default(1000)
   totalPredictions Int      @default(0)
   correctPredictions Int    @default(0)
   totalWinnings   Float     @default(0)
@@ -98,6 +99,11 @@ model Transaction {
 }
 
 // Enums
+enum UserRole {
+  USER
+  ADMIN
+}
+
 enum Category {
   SPORTS
   POLITICS
