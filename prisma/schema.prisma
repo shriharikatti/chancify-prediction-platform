@@ -1,0 +1,140 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id              String    @id @default(cuid())
+  email           String    @unique
+  password        String
+  name            String?
+  isEmailVerified Boolean   @default(false)
+  emailVerifyToken String?
+  resetToken      String?
+  resetTokenExpiry DateTime?
+  walletBalance   Float     @default(1000) // Starting balance
+  totalPredictions Int      @default(0)
+  correctPredictions Int    @default(0)
+  totalWinnings   Float     @default(0)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  // Relations
+  votes           Vote[]
+  transactions    Transaction[]
+
+  @@map("users")
+}
+
+model Prediction {
+  id          String    @id @default(cuid())
+  question    String
+  description String?
+  category    Category
+  imageUrl    String?
+  
+  // Odds and betting
+  yesOdds     Float     @default(1.5)
+  noOdds      Float     @default(1.5)
+  totalYesAmount Float  @default(0)
+  totalNoAmount  Float  @default(0)
+  
+  // Timing
+  endTime     DateTime
+  resultTime  DateTime?
+  
+  // Status and results
+  status      PredictionStatus @default(ACTIVE)
+  result      PredictionResult?
+  
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relations
+  votes       Vote[]
+
+  @@map("predictions")
+}
+
+model Vote {
+  id           String    @id @default(cuid())
+  userId       String
+  predictionId String
+  choice       VoteChoice
+  amount       Float
+  potentialPayout Float
+  actualPayout    Float?
+  createdAt    DateTime  @default(now())
+
+  // Relations
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  prediction   Prediction @relation(fields: [predictionId], references: [id], onDelete: Cascade)
+
+  // Unique constraint - one vote per user per prediction
+  @@unique([userId, predictionId])
+  @@map("votes")
+}
+
+model Transaction {
+  id          String          @id @default(cuid())
+  userId      String
+  type        TransactionType
+  amount      Float
+  description String
+  razorpayId  String?
+  status      TransactionStatus @default(PENDING)
+  createdAt   DateTime        @default(now())
+
+  // Relations
+  user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("transactions")
+}
+
+// Enums
+enum Category {
+  SPORTS
+  POLITICS
+  ENTERTAINMENT
+  TECHNOLOGY
+  FINANCE
+}
+
+enum PredictionStatus {
+  ACTIVE
+  CLOSED
+  RESOLVED
+  CANCELLED
+}
+
+enum PredictionResult {
+  YES
+  NO
+  CANCELLED
+}
+
+enum VoteChoice {
+  YES
+  NO
+}
+
+enum TransactionType {
+  DEPOSIT
+  WITHDRAWAL
+  BET_PLACED
+  BET_WON
+  BET_REFUNDED
+}
+
+enum TransactionStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
